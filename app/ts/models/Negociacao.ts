@@ -1,4 +1,7 @@
 class Negociacao {
 
-    constructor(private data, private quantidade, private valor) { }
+    constructor(
+        private _data: Date,
+        private _quantidade: number,
+        private _valor: number) { }
 }

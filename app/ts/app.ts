@@ -1,4 +1,5 @@
-alert("Oi");
+const controller = new NegociacaoController();
 
-const negociacao = new Negociacao(new Date, 1, 100);
-console.log(negociacao);
+document
+    .querySelector('.form')
+    .addEventListener('submit', controller.adiciona.bind(controller));
