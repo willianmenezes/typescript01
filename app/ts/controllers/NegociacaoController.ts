@@ -1,8 +1,8 @@
 class NegociacaoController {
 
-    private _inputData: Date;
-    private _inputQuantidade: number;
-    private _inputValor: number;
+    private _inputData: HTMLInputElement;
+    private _inputQuantidade: HTMLInputElement;
+    private _inputValor: HTMLInputElement;
 
     constructor() {
         this._inputData =  document.querySelector('#data');
@@ -10,7 +10,7 @@ class NegociacaoController {
         this._inputValor = document.querySelector('#valor');
     }
 
-    adiciona(event) {
+    adiciona(event: Event) {
 
         event.preventDefault();
 
