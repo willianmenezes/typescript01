@@ -29,7 +29,7 @@ System.register(["../helpers/decorators/index"], function (exports_1, context_1)
                 }
             };
             __decorate([
-                index_1.LogarTempoDeExecucao()
+                index_1.LogarTempoDeExecucao(true)
             ], View.prototype, "update", null);
             exports_1("View", View);
         }
