@@ -1,4 +1,6 @@
-export class Negociacao {
+import { Imprimivel } from "./Imprimivel";
+
+export class Negociacao implements Imprimivel{
 
     constructor(
         readonly data: Date,
@@ -18,6 +20,5 @@ export class Negociacao {
             Volume: ${this.volume}
             `
         );
-        
     }
 }
