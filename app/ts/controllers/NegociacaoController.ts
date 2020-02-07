@@ -69,10 +69,19 @@ export class NegociacaoController {
         }
 
         this._service.obterNegociacoes(isOk)
-            .then((negociacoes: Negociacao[]) => negociacoes.forEach(negociacao => {
-                this._negociacoes.adiciona(negociacao);
-                this._negociacoesView.update(this._negociacoes);
-            }))
+            .then((negociacoesParaImportar: Negociacao[]) => {
+
+                const negociacooesJaimportadas = this._negociacoes.paraArray();
+
+                negociacoesParaImportar
+                    .filter(negociacao =>
+                        !negociacooesJaimportadas.some(jaImportada =>
+                            negociacao.ehIgual(jaImportada)))
+                    .forEach(negociacao => {
+                        this._negociacoes.adiciona(negociacao);
+                        this._negociacoesView.update(this._negociacoes);
+                    })
+            });
     }
 }
 
